@@ -14,6 +14,44 @@ const signUp = function (data) {
   })
 }
 
+const signIn = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json'
+    },
+    data
+  })
+}
+
+const signOut = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/',
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onChangePassword = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/',
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn,
+  signOut,
+  onChangePassword
 }
