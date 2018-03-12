@@ -47,7 +47,31 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#getBudgetsButton').on('click', onGetBudgets)
+  $('#clearBudgetsButton').on('click', onClearBudgets)
+  $('ul').on('click', id, onRemove)
 }
+
+// handlebars
+const onGetBudgets = (event) => {
+  event.preventDefault()
+  api.getBudgets()
+    .then(ui.getBudgetsSuccess)
+    .catch(ui.failure)
+}
+
+const onClearBudgets = (event) => {
+  event.preventDefault()
+  ui.clearBudgets()
+}
+
+const onRemove = (event) => {
+  event.preventDefault()
+  ui.remove()
+  console.log('hello world!')
+}
+
+const id = event.target.dataset.id
 
 module.exports = {
   addHandlers

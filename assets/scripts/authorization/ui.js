@@ -59,6 +59,35 @@ const changePasswordFailure = function (error) {
   console.log(error)
 }
 
+// handlebars
+
+
+const showBudgetsTemplate = require('../templates/budget-listing.handlebars')
+
+const getBudgetsSuccess = (data) => {
+  console.log(data)
+  const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
+  $('.content').append(showBudgetsHtml)
+}
+
+const clearBudgets = () => {
+  $('.content').empty()
+}
+
+const failure = (error) => {
+  console.error(error)
+}
+
+const remove = (error) => {
+  console.error(error)
+}
+module.exports = {
+  getBudgetsSuccess,
+  clearBudgets,
+  failure,
+  remove
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
