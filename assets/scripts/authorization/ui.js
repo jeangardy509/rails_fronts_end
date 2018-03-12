@@ -3,17 +3,17 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Account Successfully created')
-  $('#message').css('background-color', 'green')
-  $('#message').css('color', 'white')
+  $('#sign-up').text('Account Successfully created')
+  $('#sign-up').css('background-color', 'green')
+  $('#sign-up').css('color', 'white')
   console.log('successfully created an Account')
   console.log(data)
 }
 
 const signUpFailure = function (error) {
-  $('#message').text('Sorry fail to Sign Up!')
-  $('#message').css('background-color', 'red')
-  $('#message').css('color', 'white')
+  $('#sign-up').text('Sorry fail to Sign Up!')
+  $('#sign-up').css('background-color', 'red')
+  $('#sign-up').css('color', 'white')
   console.log(error)
 }
 
