@@ -18,17 +18,17 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Sign in Successfully ' + data.user.id)
-  $('#message').css('background-color', 'green')
-  $('#message').css('color', 'white')
+  $('#sign-in').text('Sign in Successfully ' + data.user.id)
+  $('#sign-in').css('background-color', 'green')
+  $('#sign-in').css('color', 'white')
   console.log(data)
   store.user = data.user
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Error Signing in, please try again!')
-  $('#message').css('background-color', 'red')
-  $('#message').css('color', 'white')
+  $('#sign-in').text('Error Signing in, please try again!')
+  $('#sign-in').css('background-color', 'red')
+  $('#sign-in').css('color', 'white')
   console.log(error)
 }
 
