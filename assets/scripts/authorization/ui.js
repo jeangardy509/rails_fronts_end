@@ -33,59 +33,30 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('You have Successfully sign out')
-  $('#message').css('background-color', 'green')
-  $('#message').css('color', 'white')
+  $('#sign-out').text('You have Successfully sign out')
+  $('#sign-out').css('background-color', 'green')
+  $('#sign-out').css('color', 'white')
   console.log(data)
 }
 const signOutFailure = function (error) {
-  $('#message').text('Something went wrong, please try again!')
-  $('#message').css('background-color', 'red')
-  $('#message').css('color', 'white')
+  $('#sign-out').text('Something went wrong, please try again!')
+  $('#sign-out').css('background-color', 'red')
+  $('#sign-out').css('color', 'white')
   console.log(error)
 }
 
 const changePasswordSuccess = function (error) {
-  $('#message').text('Password successfully change!')
-  $('#message').css('background-color', 'red')
-  $('#message').css('color', 'white')
+  $('#change-password').text('Password successfully change!')
+  $('#change-password').css('background-color', 'red')
+  $('#change-password').css('color', 'white')
   console.log(error)
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Was not able to cahnge password, plase try again!')
-  $('#message').css('background-color', 'red')
-  $('#message').css('color', 'white')
+  $('#change-password').text('Was not able to cahnge password, plase try again!')
+  $('#change-password').css('background-color', 'red')
+  $('#change-password').css('color', 'white')
   console.log(error)
-}
-
-// handlebars
-
-
-const showBudgetsTemplate = require('../templates/budget-listing.handlebars')
-
-const getBudgetsSuccess = (data) => {
-  console.log(data)
-  const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
-  $('.content').append(showBudgetsHtml)
-}
-
-const clearBudgets = () => {
-  $('.content').empty()
-}
-
-const failure = (error) => {
-  console.error(error)
-}
-
-const remove = (error) => {
-  console.error(error)
-}
-module.exports = {
-  getBudgetsSuccess,
-  clearBudgets,
-  failure,
-  remove
 }
 
 module.exports = {

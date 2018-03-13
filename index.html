@@ -17,6 +17,7 @@
     <body class="container-fluid">
       <h1>BUDGET TRACKER</h1>
 
+<!-- SIGN IN -->
       <div class="container">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info" >
@@ -31,7 +32,7 @@
                         <form id="sign-in" class="form-horizontal" role="form">
 
                             <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         <input id="login-username" type="text" class="form-control" name="credentials[email]" value="" placeholder="EMAIL">
                                     </div>
 
@@ -59,7 +60,7 @@
                                     </div>
                                 </div>
 
-
+<!-- SIGN UP -->
                                 <div class="form-group">
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
@@ -71,12 +72,12 @@
                                     </div>
                                 </div>
                             </form>
-
-
-
                         </div>
                     </div>
         </div>
+
+
+
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -90,8 +91,6 @@
                                     <p>Error:</p>
                                    <span></span>
                                 </div>
-
-
 
                                 <div class="form-group">
                                     <label for="email" class="col-md-3 control-label">Email</label>
@@ -127,9 +126,21 @@
                     </div>
          </div>
     </div>
-    <button id="getBudgetsButton" class="btn btn-default">Get Budgets!</button>
-        <button id="clearBudgetsButton" class="btn btn-default">Clear Budgets!</button>
-        <div id="content" class="content">
-        </div>
+                  <form id="sign-out" class="border">
+               <fieldset>
+                 <input type="submit" value="Sign Out!">
+               </fieldset>
+           </form>
+
+<!-- CHANGE PASSWORD -->
+           <form id="change-password" class="border">
+             <fieldset>
+               <input type="password" name="passwords[old]" placeholder="Old Password">
+               <input type="password" name="passwords[new]" placeholder="New Password">
+               <input type="submit" value="Change password!">
+             </fieldset>
+</form>
+<!-- CHANGE PASSWORD CODE ENDS -->
+
     </body>
 </html>
