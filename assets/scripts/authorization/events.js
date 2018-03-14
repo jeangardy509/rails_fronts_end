@@ -42,11 +42,42 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+// const oncreateBudgets = (event) => {
+//   event.preventDefault()
+//   api.getBudgets()
+//     .then(ui.createBudgetsSuccess)
+//     .catch(ui.failure)
+// }
+//
+// const onGetBudgets = (event) => {
+//   event.preventDefault()
+//   api.getBudgets()
+//     .then(ui.getBudgetsSuccess)
+//     .catch(ui.failure)
+// }
+//
+// const onClearBudgets = (event) => {
+//   event.preventDefault()
+//   ui.clearBooks()
+// }
+//
+// const onRemove = (event) => {
+//   event.preventDefault()
+//   ui.remove()
+//   console.log('hello world!')
+// }
+//
+// const id = event.target.dataset.id
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  // $('#create').on('submit', oncreateBudgets)
+  // $('#getBudgetsButton').on('click', onGetBudgets)
+  // $('#clearBudgetsButton').on('click', onClearBudgets)
+  // $('ul').on('click', id, onRemove)
 }
 
 module.exports = {

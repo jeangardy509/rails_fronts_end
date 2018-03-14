@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showBudgetsTemplate = require('../templates/budget-listing.handlebars')
 
 const signUpSuccess = function (data) {
   $('#sign-up').text('Account Successfully created')
@@ -21,6 +22,8 @@ const signInSuccess = function (data) {
   $('#sign-in').text('Sign in Successfully ' + data.user.id)
   $('#sign-in').css('background-color', 'green')
   $('#sign-in').css('color', 'white')
+  $('#signout').css('display', 'inline')
+  $('#change-password').css('display', 'inline')
   console.log(data)
   store.user = data.user
 }
@@ -59,6 +62,38 @@ const changePasswordFailure = function (error) {
   console.log(error)
 }
 
+const createBudgetsSuccess = function (error) {
+  $('#create').text('Youe busget has been successfully created!')
+  $('#create').css('background-color', 'red')
+  $('#create').css('color', 'white')
+  console.log(error)
+}
+
+// const createBudgetsFailure = function (error) {
+//   $('#create').text('Wasn\'t to create budget!')
+//   $('#create').css('background-color', 'red')
+//   $('#create').css('color', 'white')
+//   console.log(error)
+// }
+//
+// const getBudgetsSuccess = (data) => {
+//   console.log(data)
+//   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
+//   $('.content').append(showBudgetsHtml)
+// }
+//
+// const clearBudgets = () => {
+//   $('.content').empty()
+// }
+//
+// const failure = (error) => {
+//   console.error(error)
+// }
+//
+// const remove = (error) => {
+//   console.error(error)
+// }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -68,4 +103,10 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
+  // createBudgetsSuccess,
+  // createBudgetsFailure,
+  // getBudgetsSuccess,
+  // clearBudgets,
+  // failure,
+  // remove
 }
