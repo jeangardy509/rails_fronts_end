@@ -54,18 +54,25 @@ const createBudgets = function (data) {
     url: config.apiOrigin + '/budgets'
   })
 }
-//
-// const getBudgets = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/budgets'
-//   })
-// }
+
+const getBudgets = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/budgets'
+  })
+}
+
+const clearBudgets = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/budgets'
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   onChangePassword,
-  createBudgets
-  // getBudgets
+  createBudgets,
+  getBudgets,
+  clearBudgets
 }

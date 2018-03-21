@@ -49,17 +49,17 @@ const onCreate = (event) => {
     .catch(ui.createBudgetsFailure)
 }
 
-// const onGetBudgets = (event) => {
-//   event.preventDefault()
-//   api.getBudgets()
-//     .then(ui.getBudgetsSuccess)
-//     .catch(ui.failure)
-// }
-//
-// const onClearBudgets = (event) => {
-//   event.preventDefault()
-//   ui.clearBooks()
-// }
+const onGetBudgets = (event) => {
+  event.preventDefault()
+  api.getBudgets()
+    .then(ui.getBudgetsSuccess)
+    .catch(ui.failure)
+}
+
+const onClearBudgets = (event) => {
+  event.preventDefault()
+  ui.clearBudgets()
+}
 //
 // const onRemove = (event) => {
 //   event.preventDefault()
@@ -75,8 +75,8 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#create').on('submit', onCreate)
-  // $('#getBudgetsButton').on('click', onGetBudgets)
-  // $('#clearBudgetsButton').on('click', onClearBudgets)
+  $('#getBudgetsButton').on('click', onGetBudgets)
+  $('#clearBudgetsButton').on('click', onClearBudgets)
   // $('ul').on('click', id, onRemove)
 }
 

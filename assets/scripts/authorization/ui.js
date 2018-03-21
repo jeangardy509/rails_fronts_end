@@ -75,17 +75,17 @@ const createBudgetsFailure = function (error) {
   $('#create').css('color', 'white')
   console.log(error)
 }
-//
-// const getBudgetsSuccess = (data) => {
-//   console.log(data)
-//   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
-//   $('.content').append(showBudgetsHtml)
-// }
-//
-// const clearBudgets = () => {
-//   $('.content').empty()
-// }
-//
+
+const getBudgetsSuccess = (data) => {
+  console.log(data)
+  const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
+  $('.content').append(showBudgetsHtml)
+}
+
+const clearBudgets = () => {
+  $('.content').empty()
+}
+
 // const failure = (error) => {
 //   console.error(error)
 // }
@@ -104,9 +104,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   createBudgetsSuccess,
-  createBudgetsFailure
-  // getBudgetsSuccess,
-  // clearBudgets,
+  createBudgetsFailure,
+  getBudgetsSuccess,
+  clearBudgets
   // failure,
   // remove
 }
