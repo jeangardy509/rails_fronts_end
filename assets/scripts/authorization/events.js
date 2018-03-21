@@ -42,13 +42,13 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-// const oncreateBudgets = (event) => {
-//   event.preventDefault()
-//   api.getBudgets()
-//     .then(ui.createBudgetsSuccess)
-//     .catch(ui.failure)
-// }
-//
+const onCreate = (event) => {
+  event.preventDefault()
+  api.createBudgets()
+    .then(ui.createBudgetsSuccess)
+    .catch(ui.createBudgetsFailure)
+}
+
 // const onGetBudgets = (event) => {
 //   event.preventDefault()
 //   api.getBudgets()
@@ -74,7 +74,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
-  // $('#create').on('submit', oncreateBudgets)
+  $('#create').on('submit', onCreate)
   // $('#getBudgetsButton').on('click', onGetBudgets)
   // $('#clearBudgetsButton').on('click', onClearBudgets)
   // $('ul').on('click', id, onRemove)

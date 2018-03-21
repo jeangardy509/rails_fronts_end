@@ -63,18 +63,18 @@ const changePasswordFailure = function (error) {
 }
 
 const createBudgetsSuccess = function (error) {
-  $('#create').text('Youe busget has been successfully created!')
+  $('#create').text('Your budget has been successfully created!')
   $('#create').css('background-color', 'red')
   $('#create').css('color', 'white')
   console.log(error)
 }
 
-// const createBudgetsFailure = function (error) {
-//   $('#create').text('Wasn\'t to create budget!')
-//   $('#create').css('background-color', 'red')
-//   $('#create').css('color', 'white')
-//   console.log(error)
-// }
+const createBudgetsFailure = function (error) {
+  $('#create').text('Wasn\'t to create budget!')
+  $('#create').css('background-color', 'red')
+  $('#create').css('color', 'white')
+  console.log(error)
+}
 //
 // const getBudgetsSuccess = (data) => {
 //   console.log(data)
@@ -102,9 +102,9 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
-  // createBudgetsSuccess,
-  // createBudgetsFailure,
+  changePasswordFailure,
+  createBudgetsSuccess,
+  createBudgetsFailure
   // getBudgetsSuccess,
   // clearBudgets,
   // failure,

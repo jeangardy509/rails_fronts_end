@@ -49,11 +49,11 @@ const onChangePassword = function (data) {
   })
 }
 
-// const createBudgets = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/budgets'
-//   })
-// }
+const createBudgets = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/budgets'
+  })
+}
 //
 // const getBudgets = function () {
 //   return $.ajax({
@@ -65,7 +65,7 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  onChangePassword
-  // createBudgets,
+  onChangePassword,
+  createBudgets
   // getBudgets
 }
