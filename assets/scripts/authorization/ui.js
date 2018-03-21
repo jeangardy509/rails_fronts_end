@@ -70,7 +70,7 @@ const createBudgetsSuccess = function (error) {
 }
 
 const createBudgetsFailure = function (error) {
-  $('#create').text('Wasn\'t to create budget!')
+  $('#create').text('Wasn\'t able to create a budget, please try again!')
   $('#create').css('background-color', 'red')
   $('#create').css('color', 'white')
   console.log(error)
