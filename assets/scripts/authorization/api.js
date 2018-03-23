@@ -50,8 +50,18 @@ const onChangePassword = function (data) {
 }
 
 const createBudgets = function (data) {
+  console.log(data)
+  data = {
+    budget: data
+  }
   return $.ajax({
-    url: config.apiOrigin + '/budgets'
+    url: config.apiOrigin + '/budgets',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -67,6 +77,11 @@ const clearBudgets = function () {
   })
 }
 
+const removeBudgets = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/budgets'
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -74,5 +89,6 @@ module.exports = {
   onChangePassword,
   createBudgets,
   getBudgets,
-  clearBudgets
+  clearBudgets,
+  removeBudgets
 }

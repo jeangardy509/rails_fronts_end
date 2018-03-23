@@ -24,6 +24,7 @@ const signInSuccess = function (data) {
   $('#sign-in').css('color', 'white')
   $('#signout').css('display', 'inline')
   $('#change-password').css('display', 'inline')
+  $('#create').css('display', 'inline')
   console.log(data)
   store.user = data.user
 }
@@ -62,11 +63,11 @@ const changePasswordFailure = function (error) {
   console.log(error)
 }
 
-const createBudgetsSuccess = function (error) {
+const createBudgetsSuccess = function (data) {
   $('#create').text('Your budget has been successfully created!')
   $('#create').css('background-color', 'red')
   $('#create').css('color', 'white')
-  console.log(error)
+  console.log(data)
 }
 
 const createBudgetsFailure = function (error) {
@@ -90,9 +91,9 @@ const clearBudgets = () => {
 //   console.error(error)
 // }
 //
-// const remove = (error) => {
-//   console.error(error)
-// }
+const deleteBudgets = (error) => {
+  console.error(error)
+}
 
 module.exports = {
   signUpSuccess,
@@ -106,7 +107,7 @@ module.exports = {
   createBudgetsSuccess,
   createBudgetsFailure,
   getBudgetsSuccess,
-  clearBudgets
+  clearBudgets,
+  deleteBudgets
   // failure,
-  // remove
 }

@@ -44,7 +44,8 @@ const onChangePassword = function (event) {
 
 const onCreate = (event) => {
   event.preventDefault()
-  api.createBudgets()
+  const data = getFormFields(event.target)
+  api.createBudgets(data)
     .then(ui.createBudgetsSuccess)
     .catch(ui.createBudgetsFailure)
 }
@@ -53,6 +54,7 @@ const onGetBudgets = (event) => {
   event.preventDefault()
   api.getBudgets()
     .then(ui.getBudgetsSuccess)
+    .then($('.delete').on('click', onRemove))
     .catch(ui.failure)
 }
 
@@ -60,13 +62,17 @@ const onClearBudgets = (event) => {
   event.preventDefault()
   ui.clearBudgets()
 }
-//
-// const onRemove = (event) => {
-//   event.preventDefault()
-//   ui.remove()
-//   console.log('hello world!')
-// }
-//
+
+const onRemove = (event) => {
+  const id = event.target.dataset.id
+  event.preventDefault()
+  api.removeBudgets(id)
+    .then(ui.deleteBudgetsSuccess)
+    .catch(ui.deleBudgetsfailure)
+  // ui.remove(remove)
+  console.log(id)
+}
+
 // const id = event.target.dataset.id
 
 const addHandlers = () => {
@@ -77,7 +83,7 @@ const addHandlers = () => {
   $('#create').on('submit', onCreate)
   $('#getBudgetsButton').on('click', onGetBudgets)
   $('#clearBudgetsButton').on('click', onClearBudgets)
-  // $('ul').on('click', id, onRemove)
+  $('.delete').on('click', onRemove)
 }
 
 module.exports = {

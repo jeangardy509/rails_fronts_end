@@ -4,12 +4,13 @@
   Don't uncomment yet -->
 
  <!-- Developers, why are we using data-id and not just id? -->
-  <ul data-id="{{budget.id}}"><li>Amount: {{budget.Amount}}</li>
+  <ul data-id="{{budget.id}}">
   <div>
-    {{#if budget.amount}}
-      <li>{{budget.amount}}</li>
-      <li>{{budget.id}}</li>
-      <button data-id="{{budget.id}}remove"type="button"><li>Remove</li></button>
+    {{#if budget}}
+    <li>Store: {{budget.store}}</li>
+    <li>Amount: {{budget.amount}}</li>
+      <li>Date: {{budget.date}}</li>
+      <li><button class="delete">Delete</button></li>
     {{else}}
       No author provided.
     {{/if}}
