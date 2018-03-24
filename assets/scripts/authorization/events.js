@@ -4,7 +4,7 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
-const store = ('./../store.js')
+// const store = ('./../store.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -55,6 +55,7 @@ const onGetBudgets = (event) => {
   api.getBudgets()
     .then(ui.getBudgetsSuccess)
     .catch(ui.failure)
+  $('#content').toggle()
 }
 
 const onClearBudgets = (event) => {
@@ -62,17 +63,33 @@ const onClearBudgets = (event) => {
   ui.clearBudgets()
 }
 
-const onRemove = (event) => {
-  const id = event.target.dataset.id
+// const onUpdate = (event) => {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   api.updaBudgets(data)
+//     .then(ui.updateBudgetsSuccess)
+//     .catch(ui.updateBudgetsFailure)
+// }
+const onUpdate = function (event) {
   event.preventDefault()
-  api.removeBudgets(id)
-    .then(ui.deleteBudgetsSuccess)
-    .catch(ui.deleBudgetsfailure)
-  // ui.remove(remove)
-  console.log(event.target.dataset)
+  const data = getFormFields(this)
+  api.updateBudget(data)
+    .then(ui.updateBudgetSuccess)
+    .then(() => onGetBudgets(event))
+    .catch(ui.updateBudgetFailure)
 }
 
-// const id = event.target.dataset.id
+const onRemoveBudgets = (event) => {
+  event.preventDefault()
+  const id = event.target.dataset.id
+  api.removeBudgets(id)
+    .then(() => onGetBudgets(event))
+    .catch(ui.failure)
+    // .then(ui.deleteBudgetsSuccess)
+    // .catch(ui.deleBudgetsfailure)
+    // ui.remove(remove)
+  console.log('Delete!')
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -82,8 +99,8 @@ const addHandlers = () => {
   $('#create').on('submit', onCreate)
   $('#getBudgetsButton').on('click', onGetBudgets)
   $('#clearBudgetsButton').on('click', onClearBudgets)
-  // $('.delete').on('click', onRemove)
-  $('#content').on('click', '.delete', onRemove)
+  $('.update').on('click', onUpdate)
+  $('#content').on('click', '.delete', onRemoveBudgets)
 }
 
 module.exports = {

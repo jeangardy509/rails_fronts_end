@@ -77,6 +77,19 @@ const createBudgetsFailure = function (error) {
   console.log(error)
 }
 
+const updateBudgetsSuccess = function (data) {
+  $('#create').text('Your budget has been successfully created!')
+  $('#create').css('background-color', 'red')
+  $('#create').css('color', 'white')
+  console.log(data)
+}
+
+const updateBudgetsFailure = function (error) {
+  $('#create').text('Wasn\'t able to create a budget, please try again!')
+  $('#create').css('background-color', 'red')
+  $('#create').css('color', 'white')
+  console.log(error)
+}
 const getBudgetsSuccess = (data) => {
   console.log(data)
   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
@@ -108,6 +121,8 @@ module.exports = {
   createBudgetsFailure,
   getBudgetsSuccess,
   clearBudgets,
-  deleteBudgets
+  deleteBudgets,
+  updateBudgetsSuccess,
+  updateBudgetsFailure
   // failure,
 }

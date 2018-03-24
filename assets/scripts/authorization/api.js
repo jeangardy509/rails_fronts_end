@@ -67,7 +67,10 @@ const createBudgets = function (data) {
 
 const getBudgets = function () {
   return $.ajax({
-    url: config.apiOrigin + '/budgets'
+    url: config.apiOrigin + '/budgets',
+    method: 'GET',
+    contentType: 'application/json',
+    Authorization: 'Token token=' + store.user.token
   })
 }
 
@@ -77,11 +80,29 @@ const clearBudgets = function () {
   })
 }
 
-const removeBudgets = function () {
+const updateBudgets = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/budgets'
+    url: config.apiOrigin + '/budgets/' + data.budget.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
+
+const removeBudgets = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/budgets/' + id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -90,5 +111,6 @@ module.exports = {
   createBudgets,
   getBudgets,
   clearBudgets,
-  removeBudgets
+  removeBudgets,
+  updateBudgets
 }

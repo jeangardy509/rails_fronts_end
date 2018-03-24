@@ -10,10 +10,12 @@
     <li>Store: {{budget.store}}</li>
     <li>Amount: {{budget.amount}}</li>
       <li>Date: {{budget.date}}</li>
-      <li><button data-id="{{budget.id}}" class="delete">Delete</button></li>
+      <!-- <li><button data-id="{{budget.id}}" class="delete">Delete</button></li> -->
     {{else}}
       No author provided.
     {{/if}}
+    <li><button class="delete" data-id={{budget.id}}>Delete</button></li>
+    <li><button class="update" data-id={{budget.id}}>Update</button></li>
   </div>
 </ul>
 {{/each}}
