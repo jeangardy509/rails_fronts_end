@@ -10,7 +10,7 @@
     <li>Store: {{budget.store}}</li>
     <li>Amount: {{budget.amount}}</li>
       <li>Date: {{budget.date}}</li>
-      <li><button class="delete">Delete</button></li>
+      <li><button data-id="{{budget.id}}" class="delete">Delete</button></li>
     {{else}}
       No author provided.
     {{/if}}

@@ -54,7 +54,6 @@ const onGetBudgets = (event) => {
   event.preventDefault()
   api.getBudgets()
     .then(ui.getBudgetsSuccess)
-    .then($('.delete').on('click', onRemove))
     .catch(ui.failure)
 }
 
@@ -70,7 +69,7 @@ const onRemove = (event) => {
     .then(ui.deleteBudgetsSuccess)
     .catch(ui.deleBudgetsfailure)
   // ui.remove(remove)
-  console.log(id)
+  console.log(event.target.dataset)
 }
 
 // const id = event.target.dataset.id
@@ -83,7 +82,8 @@ const addHandlers = () => {
   $('#create').on('submit', onCreate)
   $('#getBudgetsButton').on('click', onGetBudgets)
   $('#clearBudgetsButton').on('click', onClearBudgets)
-  $('.delete').on('click', onRemove)
+  // $('.delete').on('click', onRemove)
+  $('#content').on('click', '.delete', onRemove)
 }
 
 module.exports = {
