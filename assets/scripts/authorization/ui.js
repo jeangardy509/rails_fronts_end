@@ -78,22 +78,26 @@ const createBudgetsFailure = function (error) {
 }
 
 const updateBudgetsSuccess = function (data) {
-  $('#create').text('Your budget has been successfully created!')
-  $('#create').css('background-color', 'red')
-  $('#create').css('color', 'white')
+  $('#update-form').text('Your budget has been successfully created!')
+  $('#update-form').css('background-color', 'red')
+  $('#update-form').css('color', 'white')
   console.log(data)
 }
 
 const updateBudgetsFailure = function (error) {
-  $('#create').text('Wasn\'t able to create a budget, please try again!')
-  $('#create').css('background-color', 'red')
-  $('#create').css('color', 'white')
+  $('#update-form').text('Wasn\'t able to create a budget, please try again!')
+  $('#update-form').css('background-color', 'red')
+  $('#update-form').css('color', 'white')
   console.log(error)
 }
 const getBudgetsSuccess = (data) => {
   console.log(data)
   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
   $('.content').append(showBudgetsHtml)
+  // $('#update-form').onClick()
+  $('.update').on('click', function () {
+    $('#update-form').show()
+  })
 }
 
 const clearBudgets = () => {
