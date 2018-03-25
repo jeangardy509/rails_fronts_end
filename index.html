@@ -156,23 +156,51 @@
         <!-- <h4 class="modal-title" id="createModalLabel">Modal title</h4> -->
       </div>
       <div class="modal-body">
+<form id="create" class="form-horizontal">
+<fieldset>
+<legend>BUDGET TRACKER</legend>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="CCC">DATE</label>
+  <div class="col-md-4">
+  <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
+  </div>
+</div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="YIHK">STORE</label>
+  <div class="col-md-4">
+  <input id="YIHK" name="store" type="text" placeholder="Name of the store" class="form-control input-md" required="">
+  </div>
+</div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="BJKSS">AMOUNT</label>
+  <div class="col-md-4">
+  <input id="BJKSS" name="amount" type="text" placeholder="Amount Spend" class="form-control input-md" required="">
 
+  </div>
+</div>
 
-
+<!-- Button (Double) -->
+<div class="form-group">
+ <label class="col-md-4 control-label" for="button1idFFF"></label>
+  <div class="col-md-8">
+    <button id="button1idFFF" name="button1idFFF" class="btn btn-success">CREATE</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">CANCEL</button>
+  </div>
+</div>
+</fieldset>
+</form>
       </div>
 </div>
    </div>
  </div>
- <!-- <form id="create" class="border">
-     <input type="text" name="date" placeholder="date">
-     <input type="text" name="store" placeholder="store">
-     <input type="text" name="amount" placeholder="amount">
-     <input type="submit" value="create!">
- </form> -->
+
 <!-- END OF CREATE FORM -->
+
 
 <!-- GET AND CLEAR FORM -->
     <button id="getBudgetsButton" class="btn btn-default">Get Budgets!</button>
@@ -180,6 +208,7 @@
     <div id="content" class="content">
     </div>
     <!-- END OF GET AND CLEAR FORM -->
+
 
 <!-- UPDATE FORM -->
 <div class="modal fade" id="updateFormModal" tabindex="-1" role="dialog" aria-labelledby="updateFormlLabel">
@@ -209,7 +238,6 @@
           <label class="col-md-4 control-label" for="CCC">DATE</label>
           <div class="col-md-4">
           <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
-
           </div>
         </div>
 
@@ -226,7 +254,6 @@
           <label class="col-md-4 control-label" for="BJKSS">AMOUNT</label>
           <div class="col-md-4">
           <input id="BJKSS" name="amount" type="text" placeholder="Amount Spend" class="form-control input-md" required="">
-
           </div>
         </div>
 
@@ -241,19 +268,18 @@
         </fieldset>
         </form>
       </div>
-
     </div>
   </div>
 </div>
 <!-- END UPDATE FORM -->
 
 <!-- Delete MODAL -->
-<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Delete</h4>
+        <h4 class="modal-title" id="deleteModalLabel">Delete</h4>
       </div>
       <div class="modal-body">
         <p>Are you sure you want to delete this receipt?</p>
