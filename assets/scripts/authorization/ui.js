@@ -24,7 +24,21 @@ const signInSuccess = function (data) {
   $('#sign-in').css('color', 'white')
   $('#signout').css('display', 'inline')
   $('#change-password').css('display', 'inline')
-  $('#create').css('display', 'inline')
+  $(document).ready(function () {
+    $('#createModal').click(function () {
+      $('#create').fadeIn('slow')
+    })
+  })
+  // $('#create').css('display', 'inline')
+  // $('#create').get(0).reset()
+  // $('.update').on('click', function () {
+  //   $('#update-form').show()
+  // })
+  // $('.createModal').on('click', function () {
+  //   $('#create').show()
+  // })
+  // $('#sign-in').delay(5000).fadeOut()
+  // $('#sign-in').hide(1000)
   console.log(data)
   store.user = data.user
 }
@@ -33,6 +47,7 @@ const signInFailure = function (error) {
   $('#sign-in').text('Error Signing in, please try again!')
   $('#sign-in').css('background-color', 'red')
   $('#sign-in').css('color', 'white')
+  $('sign-in').hide()
   console.log(error)
 }
 
@@ -90,11 +105,11 @@ const updateBudgetsFailure = function (error) {
   $('#update-form').css('color', 'white')
   console.log(error)
 }
+
 const getBudgetsSuccess = (data) => {
   console.log(data)
   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
   $('.content').append(showBudgetsHtml)
-  // $('#update-form').onClick()
   $('.update').on('click', function () {
     $('#update-form').show()
   })
