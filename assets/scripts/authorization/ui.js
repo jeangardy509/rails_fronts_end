@@ -24,21 +24,6 @@ const signInSuccess = function (data) {
   $('#sign-in').css('color', 'white')
   $('#signout').css('display', 'inline')
   $('#change-password').css('display', 'inline')
-  $(document).ready(function () {
-    $('#createModal').click(function () {
-      $('#create').fadeIn('slow')
-    })
-  })
-  // $('#create').css('display', 'inline')
-  // $('#create').get(0).reset()
-  // $('.update').on('click', function () {
-  //   $('#update-form').show()
-  // })
-  // $('.createModal').on('click', function () {
-  //   $('#create').show()
-  // })
-  // $('#sign-in').delay(5000).fadeOut()
-  // $('#sign-in').hide(1000)
   console.log(data)
   store.user = data.user
 }
@@ -110,9 +95,9 @@ const getBudgetsSuccess = (data) => {
   console.log(data)
   const showBudgetsHtml = showBudgetsTemplate({ budgets: data.budgets })
   $('.content').append(showBudgetsHtml)
-  $('.update').on('click', function () {
-    $('#update-form').show()
-  })
+  // $('.update').on('click', function () {
+  //   $('#update-form').show()
+  // })
 }
 
 const clearBudgets = () => {

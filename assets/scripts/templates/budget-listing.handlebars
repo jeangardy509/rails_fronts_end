@@ -7,15 +7,16 @@
   <ul data-id="{{budget.id}}">
   <div>
     {{#if budget}}
+    <li>ID: {{budget.id}}</li>
     <li>Store: {{budget.store}}</li>
     <li>Amount: {{budget.amount}}</li>
       <li>Date: {{budget.date}}</li>
       <!-- <li><button data-id="{{budget.id}}" class="delete">Delete</button></li> -->
+      <li><button><a class="delete" data-toggle="modal" data-target="#deletemodal" data-id="{{budget.id}}">Delete</a></button></li>
+        <li><button><a class="update" data-toggle="modal" data-target="#updateFormModal" data-id="{{budget.id}}">update</a></button></li>
     {{else}}
       No author provided.
     {{/if}}
-    <li><button><a class="delete" data-toggle="modal" data-target="#deletemodal" data-id="{{budget.id}}">Delete</a></button></li>
-      <li><button><a class="update" data-toggle="modal" data-target="#updateFormModal" data-id="{{budget.id}}">update</a></button></li>
   </div>
 </ul>
 {{/each}}

@@ -125,6 +125,8 @@
                     </div>
          </div>
     </div>
+
+<!-- SIGN OUT FORM -->
     <div id="signout">
                   <form id="sign-out" class="border">
                <fieldset>
@@ -132,6 +134,7 @@
                </fieldset>
            </form>
          </div>
+<!-- END OF SIGN OUT FORM -->
 
 <!-- CHANGE PASSWORD -->
            <form id="change-password" class="border">
@@ -141,6 +144,7 @@
                <input type="submit" value="Change password!">
              </fieldset>
            </form>
+<!-- END OF CHANGE PASSWORD -->
 
 <!-- CREATE FORM -->
 <!-- Modal -->
@@ -161,35 +165,36 @@
 <legend>BUDGET TRACKER</legend>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="CCC">DATE</label>
+  <label class="col-md-4 control-label" for="date_1">DATE</label>
   <div class="col-md-4">
-  <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
+  <input id="date_1" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
+
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="YIHK">STORE</label>
+  <label class="col-md-4 control-label" for="store">STORE</label>
   <div class="col-md-4">
-  <input id="YIHK" name="store" type="text" placeholder="Name of the store" class="form-control input-md" required="">
+  <input id="store" name="store" type="text" placeholder="Name of the store" class="form-control input-md" required="">
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="BJKSS">AMOUNT</label>
+  <label class="col-md-4 control-label" for="amount">AMOUNT</label>
   <div class="col-md-4">
-  <input id="BJKSS" name="amount" type="text" placeholder="Amount Spend" class="form-control input-md" required="">
+  <input id="amount" name="amount" type="text" placeholder="Amount Spend" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Button (Double) -->
 <div class="form-group">
- <label class="col-md-4 control-label" for="button1idFFF"></label>
+ <label class="col-md-4 control-label" for="button_1"></label>
   <div class="col-md-8">
-    <button id="button1idFFF" name="button1idFFF" class="btn btn-success">CREATE</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">CANCEL</button>
+    <button id="button_1" name="button_1" class="btn btn-success">CREATE</button>
+    <!-- <button id="button_2" name="button_2" class="btn btn-danger">CANCEL</button> -->
   </div>
 </div>
 </fieldset>
@@ -198,7 +203,6 @@
 </div>
    </div>
  </div>
-
 <!-- END OF CREATE FORM -->
 
 
@@ -228,16 +232,16 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="id">ID</label>
           <div class="col-md-4">
-          <input id="id" name="KKKO" type="text" placeholder="Enter your user ID" class="form-control input-md" required="">
+          <input id="id" name="KKKO" type="text" placeholder="Enter your receipt ID" class="form-control input-md" required="">
 
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="CCC">DATE</label>
+          <label class="col-md-4 control-label" for="date_0">DATE</label>
           <div class="col-md-4">
-          <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
+          <input id="date_0" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
           </div>
         </div>
 
@@ -259,10 +263,10 @@
 
         <!-- Button (Double) -->
         <div class="form-group">
-         <label class="col-md-4 control-label" for="button1idFFF"></label>
+         <label class="col-md-4 control-label" for="button"></label>
           <div class="col-md-8">
-            <button id="button1idFFF" name="button1idFFF" class="btn btn-success">UPDATE</button>
-            <button id="button2id" name="button2id" class="btn btn-danger">CANCEL</button>
+            <button id="update" name="button1" class="btn btn-success">UPDATE</button>
+            <!-- <button id="button_3" name="cancel" class="btn btn-danger">CANCEL</button> -->
           </div>
         </div>
         </fieldset>
@@ -292,5 +296,7 @@
   </div>
 </div>
 <!-- END OF DELETE MODAL -->
+
+
     </body>
 </html>

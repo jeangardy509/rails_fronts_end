@@ -44,8 +44,9 @@ const onChangePassword = function (event) {
 
 const onCreate = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const data = getFormFields(this)
   api.createBudgets(data)
+  console.log('HELP ME!')
     .then(ui.createBudgetsSuccess)
     .catch(ui.createBudgetsFailure)
 }
@@ -54,8 +55,9 @@ const onGetBudgets = (event) => {
   event.preventDefault()
   api.getBudgets()
     .then(ui.getBudgetsSuccess)
+    .then(() => onGetBudgets(event))
     .catch(ui.failure)
-  $('#content').toggle()
+  // $('#content').toggle()
 }
 
 const onClearBudgets = (event) => {
@@ -72,11 +74,12 @@ const onClearBudgets = (event) => {
 // }
 const onUpdate = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
-  api.updateBudget(data)
-    .then(ui.updateBudgetSuccess)
+  const data = getFormFields(event.target)
+  api.updateBudgets(data)
+    .then(ui.updateBudgetsSuccess)
     .then(() => onGetBudgets(event))
-    .catch(ui.updateBudgetFailure)
+    .catch(ui.updateBudgetsFailure)
+  console.log('hello world')
 }
 
 const onRemoveBudgets = (event) => {
@@ -99,7 +102,7 @@ const addHandlers = () => {
   $('#create').on('submit', onCreate)
   $('#getBudgetsButton').on('click', onGetBudgets)
   $('#clearBudgetsButton').on('click', onClearBudgets)
-  $('.update').on('click', onUpdate)
+  $('#update-form').on('click', onUpdate)
   $('#content').on('click', '.delete', onRemoveBudgets)
 }
 

@@ -1,9 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-  background-color: #EEEEEE;
-}
 
 // CHANGE PASSWORD
 
@@ -34,10 +31,14 @@ body {
   display: none;
 }
 
-// #create {
-//   display: none;
-// }
+#createModal {
+  display: none;
+}
 
 #update-form {
+  display: none;
+}
+
+#getBudgetsButton {
   display: none;
 }
