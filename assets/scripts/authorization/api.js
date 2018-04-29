@@ -50,10 +50,10 @@ const onChangePassword = function (data) {
 }
 
 const createBudgets = function (data) {
-  // console.log(data)
-  // data = {
-  //   budget: data
-  // }
+  console.log(data)
+  data = {
+    budget: data
+  }
   return $.ajax({
     url: config.apiOrigin + '/budgets',
     method: 'POST',
